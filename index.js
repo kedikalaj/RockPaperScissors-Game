@@ -1,5 +1,6 @@
 let AIchoice;
-let userChoice
+let userChoice;
+let Score=0;
 
 
 
@@ -7,22 +8,25 @@ document.getElementById("rock").onclick=function(){
     userChoice="rock";
     let machine = Math.floor(Math.random()*3)+1;
     AIchoice= AIchoices(machine);
-    console.log(AIchoice)
     document.getElementById("label").innerHTML=win(userChoice,AIchoice);
+    document.getElementById("machinechoice").innerHTML = "The machine choosed: " + AIchoice;
+    document.getElementById("score").innerHTML="User score: "+Score;
 }
 document.getElementById("scissor").onclick=function(){
     userChoice="scissor";
     let machine = Math.floor(Math.random()*3)+1;
     AIchoice= AIchoices(machine);
-    console.log(AIchoice)
     document.getElementById("label").innerHTML=win(userChoice,AIchoice);
+    document.getElementById("machinechoice").innerHTML = "The machine choosed: " + AIchoice;
+    document.getElementById("score").innerHTML="User score: "+Score;
 }
 document.getElementById("paper").onclick=function(){
     userChoice="paper";
     let machine = Math.floor(Math.random()*3)+1;
     AIchoice= AIchoices(machine);
-    console.log(AIchoice)
     document.getElementById("label").innerHTML=win(userChoice,AIchoice);
+    document.getElementById("machinechoice").innerHTML = "The machine picked: " + AIchoice;
+    document.getElementById("score").innerHTML="User score: "+Score;
 }
 
 
@@ -48,16 +52,16 @@ function win(user,machine){
         outcome="Draw!";
     }
     else if(user=="rock"){
-        if(machine=="scissor"){outcome="User wins"}
-        else{outcome="AI wins"}
+        if(machine=="scissor"){outcome="User wins";Score+=1;}
+        else{outcome="Machine wins"}
     }
     else if(user=="scissor"){
-        if(machine=="paper"){outcome="User wins"}
-        else{outcome="AI wins"}
+        if(machine=="paper"){outcome="User wins";Score+=1;}
+        else{outcome="Machine wins"}
     }
     else if(user=="paper"){
-        if(machine=="rock"){outcome="User wins"}
-        else{outcome="AI wins"}
+        if(machine=="rock"){outcome="User wins";Score+=1;}
+        else{outcome="Machine wins"}
     }
     return outcome;
 }
