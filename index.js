@@ -9,7 +9,7 @@ document.getElementById("rock").onclick=function(){
     let machine = Math.floor(Math.random()*3)+1;
     AIchoice= AIchoices(machine);
     document.getElementById("label").innerHTML=win(userChoice,AIchoice);
-    document.getElementById("machinechoice").innerHTML = "The machine choosed: " + AIchoice;
+    document.getElementById("machinechoice").innerHTML = "The machine picked: " + AIchoice;
     document.getElementById("score").innerHTML="User score: "+Score;
 }
 document.getElementById("scissor").onclick=function(){
@@ -17,7 +17,7 @@ document.getElementById("scissor").onclick=function(){
     let machine = Math.floor(Math.random()*3)+1;
     AIchoice= AIchoices(machine);
     document.getElementById("label").innerHTML=win(userChoice,AIchoice);
-    document.getElementById("machinechoice").innerHTML = "The machine choosed: " + AIchoice;
+    document.getElementById("machinechoice").innerHTML = "The machine picked: " + AIchoice;
     document.getElementById("score").innerHTML="User score: "+Score;
 }
 document.getElementById("paper").onclick=function(){
